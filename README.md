@@ -4,7 +4,7 @@
 <br>
 ## My contact details:
 * 📧[Email](mailto:danil72008@yandex.ru)
-* 📃[Telegram](https://t.me/rinneway)
+* 📃[Telegram](https://t.me/riNN_dev)
 
   
 
