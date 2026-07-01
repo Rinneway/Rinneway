@@ -1,6 +1,6 @@
 # Hi, I'm riNN 👋
 
-🧑‍💻 Junior Software Developer
+🧑‍💻 Junior Developer
 
 ## My contact details:
 * 📧 [Email](mailto:danil72008@yandex.ru)
