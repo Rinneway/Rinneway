@@ -37,3 +37,11 @@
 ## 🎨 Graphics & UI/UX
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)
+
+###
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rinneway/Rinneway/refs/heads/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rinneway/Rinneway/refs/heads/output/github-contribution-grid-snake-light.svg">
+  <img alt="GitHub Streak Snake" src="https://raw.githubusercontent.com/Rinneway/Rinneway/refs/heads/output/github-contribution-grid-snake.svg">
+</picture>
