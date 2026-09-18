@@ -1,0 +1,46 @@
+name: Generate Snake
+
+on:
+  schedule:
+    # Запуск каждые 12 часов (в 00:00 и 12:00 по UTC)
+    - cron: "0 */12 * * *"
+  # Позволяет запускать генерацию вручную в любое время
+  workflow_dispatch:
+  # Запуск при каждом пуше в главную ветку (main или master)
+  push:
+    branches:
+      - main
+      - master
+
+# Явно задаем права для корректной работы в современных репозиториях
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      # 1. Скачиваем репозиторий (необходимо для некоторых экшенов публикации)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Генерируем змейку (используем стабильную 3-ю версию экшена)
+      - name: Generate github-contribution-grid-snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-light.svg?palette=github-light
+
+      # 3. Деплоим сгенерированные SVG-файлы в отдельную ветку "output"
+      - name: Push/Update files in output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
